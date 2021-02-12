@@ -1,0 +1,29 @@
+<section>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar>
+        <img [src]="imgUrl" class="article-avatar" />
+      </div>
+      <mat-card-title>{{ info.name | cropText: textLength }}</mat-card-title>
+      <mat-card-subtitle> {{ artcleType }} </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="imageUrl" [alt]="info.name" />
+    <mat-card-content>
+      <p>{{ info.description | cropText: textLength }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <section>
+        <button
+          mat-button
+          (click)="onNavigate('training')"
+          *ngIf="artcleType === 'Practical Article'"
+        >
+          Let's Do It !
+        </button>
+        <button mat-button (click)="readMore()">
+          {{ textLength === 25 ? "Read More !" : "Read The Gist !" }}
+        </button>
+      </section>
+    </mat-card-actions>
+  </mat-card>
+</section>

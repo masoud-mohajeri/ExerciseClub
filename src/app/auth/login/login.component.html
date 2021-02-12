@@ -1,0 +1,65 @@
+<section class="form-section">
+  <form
+    *ngIf="!spinner"
+    #f
+    [formGroup]="loginForm"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    (ngSubmit)="onSubmit()"
+    fxLayoutGap="10px"
+    #myNgForm="ngForm"
+  >
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input
+        [formControlName]="'email'"
+        type="email"
+        matInput
+        required
+        placeholder="E-mail"
+        email
+        name="email"
+        #emailInput
+      />
+      <mat-error *ngIf="loginForm.controls.email?.errors?.required"
+        >Email address is Required !
+      </mat-error>
+      <mat-error *ngIf="loginForm.controls.email?.errors?.email"
+        >Email is not valid !
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+        [formControlName]="'password'"
+        type="password"
+        matInput
+        required
+        placeholder="Password"
+        name="password"
+        required
+        minlength="6"
+        #peInput
+      />
+      <mat-hint align="end">{{ peInput.value?.length }}/6 </mat-hint>
+      <mat-error *ngIf="loginForm.controls.password?.errors?.required"
+        >Password address is Required !
+      </mat-error>
+      <mat-error *ngIf="loginForm.controls.password?.errors?.minlength"
+        >Password must have at least 6 charecters length !
+      </mat-error>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      type="submit"
+      color="primary"
+      [disabled]="loginForm.invalid"
+    >
+      Login
+    </button>
+  </form>
+</section>
+<section *ngIf="spinner" class="fix-spinner">
+  <app-loading-spinner style="display: inline-block"></app-loading-spinner>
+</section>

@@ -1,0 +1,35 @@
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Articles">
+    <section
+      class="articles-section"
+      fxFlex
+      fxLayout="column"
+      fxLayoutAlign="center center"
+      fxLayoutGap="10px"
+    >
+    <!--  -->
+      <app-article-card
+        *ngFor="let ex of theExercies; let i = index"
+        [id]="i"
+        [imgUrl]="'../../assets/icons/artcle-exs.png'"
+        [info]="ex"
+        [artcleType]="'Practical Article'"
+        [imageUrl]="urlsEx[i]"
+      >
+      </app-article-card>
+      <!--  -->
+      <app-article-card
+        *ngFor="let article of theArticles ; let i = index"
+        [id]="i"
+        [imgUrl]="'../../assets/icons/article-people.png'"
+        [info]="article"
+        [artcleType]="article.articleType"
+        [imageUrl]="urls[i] "
+      >
+      </app-article-card>
+    </section>
+  </mat-tab>
+  <mat-tab label="New Article">
+    <app-new-article></app-new-article>
+  </mat-tab>
+</mat-tab-group>

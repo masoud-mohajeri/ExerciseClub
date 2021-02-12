@@ -1,0 +1,40 @@
+<mat-toolbar color="primary">
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div fxFlex fxLayout.lt-sm="row-reverse" fxLayout.gt-xs="row">
+    <a routerLink="/">
+      <i>
+        <img
+          class="logo-icon"
+          src="../../../assets/icons/exercise.png"
+          alt="Logo"
+        />
+      </i>
+    </a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+    <ul fxLayout class="navigation-items" fxLayoutGap="10px">
+      <li *ngIf="!isAuth">
+        <a routerLink="/signup">Signup</a>
+      </li>
+      <li *ngIf="!isAuth">
+        <a routerLink="/login">Login</a>
+      </li>
+      <li *ngIf="isAuth">
+        <a routerLink="/training"> Training</a>
+      </li>
+      <li *ngIf="isAuth">
+        <a routerLink="/articles"> Articles</a>
+      </li>
+      <li *ngIf="isAuth">
+        <a style="cursor: pointer" (click)="onLogout()">Logout</a>
+      </li>
+      <li>
+        <a style="cursor: pointer" (click)="toggleTheme()">Change Theme</a>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>

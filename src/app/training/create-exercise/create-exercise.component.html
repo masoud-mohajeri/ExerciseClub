@@ -1,0 +1,94 @@
+<section class="exinput-form">
+  <form
+    fxFlex
+    fxLayout="column"
+    (ngSubmit)="onSubmitEx()"
+    [formGroup]="exerciseForm"
+    #myNgForm="ngForm"
+  >
+    <!-- name -->
+    <mat-form-field appearance="outline">
+      <mat-label>Exercise Name </mat-label>
+      <input matInput ngModel type="text" [formControlName]="'name'" />
+      <mat-icon matSuffix> directions_run</mat-icon>
+      <mat-error *ngIf="exerciseForm.controls.name.errors?.required">
+        A valid Name is required !
+      </mat-error>
+      <mat-error *ngIf="exerciseForm.controls.name.errors?.nameExists">
+        This name has been already taken ! 
+      </mat-error>
+    </mat-form-field>
+    <!-- Calories -->
+    <mat-form-field appearance="outline">
+      <mat-label>Burning Calories </mat-label>
+      <input matInput ngModel type="number" [formControlName]="'calories'" />
+      <mat-icon matSuffix>lunch_dining</mat-icon>
+      <mat-error *ngIf="exerciseForm.controls.calories.errors?.required">
+        This feild id mandatory
+      </mat-error>
+      <mat-error *ngIf="exerciseForm.controls.calories.errors?.min">
+        Minimum value must be 1
+      </mat-error>
+    </mat-form-field>
+    <!-- duration  -->
+    <mat-form-field appearance="outline">
+      <mat-label>Recomended Duration </mat-label>
+      <input matInput ngModel type="number" [formControlName]="'duration'" />
+      <mat-icon matSuffix>timer</mat-icon>
+      <mat-error *ngIf="exerciseForm.controls.duration.errors?.required">
+        This feild id mandatory
+      </mat-error>
+      <mat-error *ngIf="exerciseForm.controls.duration.errors?.min">
+        Minimum duration at least must be 1
+      </mat-error>
+    </mat-form-field>
+    <!-- description  -->
+    <mat-form-field appearance="outline">
+      <mat-label>Description </mat-label>
+      <!-- <input matInput placeholder="" /> -->
+      <textarea
+        matInput
+        ngModel
+        type="trxt"
+        [formControlName]="'exDescription'"
+      ></textarea>
+      <mat-icon matSuffix>description</mat-icon>
+      <mat-error *ngIf="exerciseForm.controls.exDescription.errors?.required">
+        This feild id mandatory
+      </mat-error>
+      <mat-error *ngIf="exerciseForm.controls.exDescription.errors?.minlength">
+        Please describe the exercise more !
+      </mat-error>
+    </mat-form-field>
+    <!-- file -->
+    <mat-form-field appearance="outline">
+      <ngx-mat-file-input
+      ngModel
+        [formControlName]="'exImage'"
+        [multiple]="false"
+        (change)="uploadFile($event)"
+      >
+      </ngx-mat-file-input>
+      <!-- <mat-icon ngxMatFileInputIcon>folder</mat-icon> -->
+      <mat-error *ngIf="exerciseForm.controls.exImage.errors?.required">
+        This feild id mandatory
+      </mat-error>
+    </mat-form-field>
+    <mat-progress-bar
+      style="margin-bottom: 15px"
+      class="example-margin"
+      color="primary"
+      mode="determinate"
+      [value]="uploadPercent | async"
+    >
+    </mat-progress-bar>
+    <button
+      [disabled]="exerciseForm.invalid || !uploadFinished"
+      mat-flat-button
+      color="accent"
+      type="submit"
+    >
+      Add Exercise
+    </button>
+  </form>
+</section>

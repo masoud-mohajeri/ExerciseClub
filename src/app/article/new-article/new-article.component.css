@@ -1,0 +1,11 @@
+.exinput-form{
+  width: 300px;
+  margin: 15px auto;
+}
+@media only screen and (min-width: 600px){
+
+  .exinput-form{
+    width: 500px;
+  }
+
+} 

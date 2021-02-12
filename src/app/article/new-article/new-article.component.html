@@ -1,0 +1,88 @@
+<section class="exinput-form">
+  <form
+    [formGroup]="articleForm"
+    (ngSubmit)="onSubmit()"
+    fxFlex
+    fxLayout="column"
+    #myNgForm="ngForm"
+  >
+    <!-- name -->
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        placeholder="Name"
+        [formControlName]="'name'"
+        type="text"
+      />
+      <mat-icon matSuffix> directions_run</mat-icon>
+      <mat-error *ngIf="articleForm.controls.name.errors?.required">
+        A valid Name is required !
+      </mat-error>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    <!-- articleType -->
+    <mat-form-field appearance="outline">
+      <mat-label>Article Type</mat-label>
+      <input
+        matInput
+        placeholder="Article Type"
+        [formControlName]="'articleType'"
+        type="text"
+      />
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-error *ngIf="articleForm.controls.articleType.errors?.required">
+        A valid Article Type is required !
+      </mat-error>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    <!-- description -->
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        placeholder="Description"
+        [formControlName]="'description'"
+        type="text"
+      >
+      </textarea>
+      <mat-icon matSuffix>description</mat-icon>
+      <mat-error *ngIf="articleForm.controls.description.errors?.required">
+        A valid Description is required !
+      </mat-error>
+      <mat-error *ngIf="articleForm.controls.description.errors?.minlength">
+        A valid Description has at least 15 charecters length !
+      </mat-error>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    <!-- articleImage -->
+    <mat-form-field appearance="outline">
+      <mat-label>Image</mat-label>
+      <ngx-mat-file-input
+        ngModel
+        [formControlName]="'articleImage'"
+        [multiple]="false"
+        (change)="uploadFile($event)"
+      >
+      </ngx-mat-file-input>
+    </mat-form-field>
+    <!-- progress bar  -->
+    <mat-progress-bar
+      style="margin-bottom: 15px"
+      class="example-margin"
+      color="primary"
+      mode="determinate"
+      [value]="uploadPercent | async"
+    >
+    </mat-progress-bar>
+    <!-- submit -->
+    <button
+      [disabled]="articleForm.invalid || !uploadFinished"
+      mat-flat-button
+      color="accent"
+      type="submit"
+    >
+      Add Exercise
+    </button>
+  </form>
+</section>

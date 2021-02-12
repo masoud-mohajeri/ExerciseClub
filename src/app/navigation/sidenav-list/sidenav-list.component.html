@@ -1,0 +1,98 @@
+<mat-nav-list>
+  <!-- Signup -->
+  <a routerLink="/signup" (click)="onClose()">
+    <mat-list-item role="listitem" *ngIf="!isAuth">
+      <!-- <mat-icon> face </mat-icon> -->
+      <i>
+        <img
+          class="icon-sidenav"
+          src="../../../assets/icons/signup.png"
+          alt="login"
+        />
+      </i>
+      <span class="nav-caption"> Signup </span>
+    </mat-list-item>
+  </a>
+
+  <!-- Login -->
+  <a routerLink="/login" (click)="onClose()">
+    <mat-list-item role="listitem" *ngIf="!isAuth">
+      <!-- <mat-icon> input </mat-icon> -->
+      <i>
+        <img
+          class="icon-sidenav"
+          src="../../../assets/icons/login.png"
+          alt="login"
+        />
+      </i>
+      <span class="nav-caption"> Login </span>
+    </mat-list-item>
+  </a>
+
+  <!-- Training -->
+  <a routerLink="/training" (click)="onClose()" *ngIf="isAuth">
+    <mat-list-item role="listitem">
+      <i>
+        <img
+          class="icon-sidenav"
+          src="../../../assets/icons/training.png"
+          alt="login"
+        />
+      </i>
+      <span class="nav-caption"> Training </span>
+    </mat-list-item>
+  </a>
+
+  <!-- Logout -->
+  <mat-list-item *ngIf="isAuth" (click)="onLogout()">
+    <a>
+      <i>
+        <img
+          class="icon-sidenav"
+          src="../../../assets/icons/logout.png"
+          alt="login"
+        />
+      </i>
+      <span class="nav-caption">Logout</span>
+      <!-- </button> -->
+    </a>
+  </mat-list-item>
+
+
+
+<!-- Articles -->
+<a routerLink="/articles" (click)="onClose()">
+  <mat-list-item role="listitem" *ngIf="isAuth">
+    <!-- <mat-icon> input </mat-icon> -->
+    <i>
+      <img
+        class="icon-sidenav"
+        src="../../../assets/icons/article-nav.png"
+        alt="login"
+      />
+    </i>
+    <span class="nav-caption"> Articles </span>
+  </mat-list-item>
+</a>
+
+
+
+
+
+
+
+
+
+  <a (click)="toggleTheme()">
+    <mat-list-item role="listitem">
+      <i>
+        <img
+          class="icon-sidenav"
+          src="../../../assets/icons/theme.png"
+          alt="Theme"
+        />
+      </i>
+      <span class="nav-caption">Toggle Theme </span>
+    </mat-list-item>
+  </a>
+</mat-nav-list>

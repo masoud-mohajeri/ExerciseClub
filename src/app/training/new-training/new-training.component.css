@@ -1,0 +1,8 @@
+.new-training {
+  padding: 20px;
+}
+.fix-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
