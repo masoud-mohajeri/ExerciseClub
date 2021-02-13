@@ -1,0 +1,105 @@
+{
+  "configVersion": 1,
+  "timestamp": 1613152668929,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/4.9613ef48b38277996902.js",
+        "/5.938728ef0446e98ea5db.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main.6a2e56cf3c81f0bbd334.js",
+        "/manifest.webmanifest",
+        "/polyfills.6abdde2583a2e01a2350.js",
+        "/runtime.878b633213346fce0c99.js",
+        "/styles.83d9ce1abc8fb2813b76.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/icons/appIcon.png",
+        "/assets/icons/artcle-exs.png",
+        "/assets/icons/article-nav.png",
+        "/assets/icons/article-people.png",
+        "/assets/icons/exercise.png",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/icons/login.png",
+        "/assets/icons/logout.png",
+        "/assets/icons/signup.png",
+        "/assets/icons/theme.png",
+        "/assets/icons/training.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/4.9613ef48b38277996902.js": "345df5c4c2c8fc59ef54e3ef4354d655cc056ec4",
+    "/5.938728ef0446e98ea5db.js": "6349718b66698953a0a624db38d540372aff3d7a",
+    "/assets/icons/appIcon.png": "66c09124c4528e1570b9a16085346577b789b191",
+    "/assets/icons/artcle-exs.png": "2d1f91142567936a3889060c2b2e6a8348662501",
+    "/assets/icons/article-nav.png": "65ade06341ae7e3b6f8835d1ea8abd7db7d549cb",
+    "/assets/icons/article-people.png": "c08bd6183ae5cf05201fec64657bde847adfdc40",
+    "/assets/icons/exercise.png": "f5490e9ad6f0b9b8ab7cbacd3796ffd4dc0cb107",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/icons/login.png": "507393f2fe151865ef7d20413eff14e5ff696536",
+    "/assets/icons/logout.png": "7ada99789aa386f58f088b8f34044251bc928674",
+    "/assets/icons/signup.png": "67e0b6d751b63247500403b56ac5845f63376f76",
+    "/assets/icons/theme.png": "1edf0e783893763a33153702089acc68e5a61466",
+    "/assets/icons/training.png": "9ba666b69dd0c36287cb01bc6d0d4b1cd227b16a",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/index.html": "30c8355eb62d640f04aeee751efc68df03668a78",
+    "/main.6a2e56cf3c81f0bbd334.js": "291a2b2ad15cab5b25eca09d5d914157df52895a",
+    "/manifest.webmanifest": "ec95b91bd3bd157252f32bb0ce3f17a5c6f00604",
+    "/polyfills.6abdde2583a2e01a2350.js": "f888b31e000d9b05c8c3fef19c325d813f2b7e1b",
+    "/runtime.878b633213346fce0c99.js": "8182e6c1b6a91985ebe678bb5f783ff03a6786a3",
+    "/styles.83d9ce1abc8fb2813b76.css": "ad82c395f11ab2cdbfa6c5161716ae6423c2978b"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
